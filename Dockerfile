@@ -1,8 +1,8 @@
 FROM seapy/ruby:2.1.2
 MAINTAINER ChangHoon Jeong <iamseapy@gmail.com>
 
-# Install AWS Command Line Interface
-RUN apt-get install -y awscli
+# Install AWS and lftp Command Line Interface
+RUN apt-get install -y awscli lftp
 
 WORKDIR /app
 
