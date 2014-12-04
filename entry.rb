@@ -40,7 +40,7 @@ class Entry
 	`aws s3 sync #{BACKUP_PATH} s3://#{S3_PATH} --delete`
     end    
     unless (FTP_HOST).nil?
-      `lftp ftp://#{FTP_LOGIN}:#{FTP_PASSWORD}@#{FTP_HOST}  -e "mirror -e -R #{BACKUP_PATH} #{FTP_PATH};quit"`
+      `lftp ftp://#{FTP_LOGIN}:#{FTP_PASSWORD}@#{FTP_HOST}  -e "set ftp:ssl-allow no;mirror -e -R #{BACKUP_PATH} #{FTP_PATH};quit"`
     end
   end
   
